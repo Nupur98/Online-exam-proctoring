@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+   <head>
+      <title>C Programming Language Output this code Quizzes 1</title>
+    
+                <link rel="stylesheet" type="text/css" href="{% static 'CSS/style.css' %}" />
+                
+ 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+     <script type="text/javascript">
+	$(document).ready(function() {
+    $('input[type=radio]').click(function() {
+
+var a =$(this).next('label');
+$('input:radio[name='+$(this).attr('name')+']').each(function(){
+$(this).next().removeClass("worngans");
+});
+$(a).addClass('worngans');
+});
+$("#submit").click(function(){
+cnt=0;
+$(".slp").each(function(){
+if($(this).hasClass("worngans"))
+cnt++;
+});
+$("#form1").html("<h3>Your answers submitted successfully! Thank You....</h3><p><a href='submit'>Back</a>");
+});
+
+	});
+</script>
+   
+    
+   </head>
+   <body >
+<form id="form1" action="#">
+<div class="scp-quizzes-main">
+<div class="scp-quizzes-data">
+  <h3>1. What is the output of the below c code?</h3>
+    <pre>#include&lt;stdio.h>	
+main() 
+{
+   int x = 5;
+   
+   if(x=5)
+   {	
+      if(x=5) printf("Fast");
+   } 
+   printf("learning");
+}</pre>
+<br/>
+    <input type="radio" name="question1">
+       <label for="Fastlearning" class="slp">1. Fastlearning</label><br/>
+    <input type="radio"  name="question1">
+       <label>2. learning</label><br/>
+    <input type="radio" name="question1">
+       <label>3. learningFast</label> <br/>
+    <input type="radio" name="question1">
+     <label>4. Fast</label> 
+ </div>
+ <div class="scp-quizzes-data">
+  <h3>2. How would you insert pre-written code into a current program ?</h3>
+    <pre>#include&lt;stdio.h>	
+main() 
+{
+   int x = 5;
+   
+   if(x=5)
+   {	
+      if(x=5) printf("Fast");
+   } 
+   printf("learning");
+}</pre>
+<br/>
+    <input type="radio" name="question2">
+       <label>1. #read&lt;file></label><br/>
+    <input type="radio"  name="question2">
+       <label>2. #get &lt;file></label><br/>
+    <input type="radio" name="question2" >
+       <label for="inculdefile" class="slp">3. #include &lt;file></label> <br/>
+    <input type="radio" name="question2">
+     <label>4. #pre &lt;file></label> 
+ </div>
+</div>
+
+<div><input type="button" id="submit" name="submit" value="SUBMIT"></div>
+</form>
+</body></html>
